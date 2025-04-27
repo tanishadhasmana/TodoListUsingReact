@@ -22,17 +22,19 @@ function handleClick(){
   
 }
 function handleDeletion(id){
-  const itemToEdit = todolist.find(item => item.id === id);
-  const updatedTask =  itemToEdit.task;  
-  if (updatedTask !== null && updatedTask.trim() !== "") {
-    const updatedList = todolist.map(item => {
-      if (item.id === id) {
-        return { ...item, task: updatedTask };
-      }
-      return item;
-    });
-    setTodo(updatedList);
-  }
+  // const itemToEdit = todolist.find(item => item.id === id);
+  // const updatedTask =  itemToEdit.task;  
+  // if (updatedTask !== null && updatedTask.trim() !== "") {
+  //   const updatedList = todolist.map(item => {
+  //     if (item.id === id) {
+  //       return { ...item, task: updatedTask };
+  //     }
+  //     return item;
+  //   });
+  //   setTodo(updatedList);
+  // }
+  const updatedList = todolist.filter(item => item.id !== id);
+  setTodo(updatedList);
 }
 
 function handleEdition(id){
